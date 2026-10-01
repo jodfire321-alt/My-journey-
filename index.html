@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adarsh Journey | My Life & Memories</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#050914;
+    --card:rgba(255,255,255,.065);
+    --border:rgba(255,255,255,.11);
+    --blue:#55c8ff;
+    --cyan:#83e7ff;
+    --text:#f5f9ff;
+    --muted:#91a4b8;
+}
+
+body{
+    font-family:Inter,Arial,sans-serif;
+    background:
+        radial-gradient(circle at 15% 10%,rgba(52,170,255,.16),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(91,112,255,.12),transparent 30%),
+        var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+
+/* NAVBAR */
+
+nav{
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+    padding:22px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:var(--blue);
+}
+
+.nav-btn{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.06);
+    color:white;
+    padding:9px 15px;
+    border-radius:30px;
+}
+
+/* HERO */
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+}
+
+.hero{
+    min-height:430px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    padding:60px 45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(90deg,rgba(3,9,20,.94),rgba(3,9,20,.58)),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.hero small{
+    color:var(--cyan);
+    letter-spacing:3px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,78px);
+    line-height:1;
+    letter-spacing:-3px;
+    max-width:800px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero p{
+    max-width:620px;
+    color:#bdcad7;
+    line-height:1.7;
+    margin-top:20px;
+    font-size:16px;
+}
+
+.hero-button{
+    width:max-content;
+    margin-top:28px;
+    padding:14px 21px;
+    border-radius:14px;
+    background:var(--blue);
+    color:#06111c;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+}
+
+/* SECTION */
+
+.section{
+    margin-top:55px;
+}
+
+.section-title{
+    margin-bottom:20px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+.section-title p{
+    color:var(--muted);
+    margin-top:6px;
+}
+
+/* JOURNEY FORM */
+
+.editor{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:28px;
+    backdrop-filter:blur(15px);
+}
+
+input,
+textarea{
+    width:100%;
+    background:rgba(0,0,0,.22);
+    color:white;
+    border:1px solid var(--border);
+    border-radius:13px;
+    padding:14px;
+    outline:none;
+    margin-bottom:15px;
+    font-family:inherit;
+}
+
+input:focus,
+textarea:focus{
+    border-color:var(--blue);
+}
+
+textarea{
+    min-height:170px;
+    resize:vertical;
+}
+
+label{
+    display:block;
+    color:#b7c7d5;
+    font-size:13px;
+    margin-bottom:7px;
+}
+
+.add-btn{
+    background:linear-gradient(135deg,#55c8ff,#7ce6ff);
+    border:none;
+    padding:13px 22px;
+    border-radius:13px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+/* IMAGE UPLOAD */
+
+.image-upload{
+    border:1px dashed #45677e;
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:15px;
+    text-align:center;
+    color:var(--muted);
+}
+
+.image-upload input{
+    border:none;
+    margin:10px 0 0;
+}
+
+/* JOURNEY CARDS */
+
+#journeyList{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.journey-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:22px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.journey-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(85,200,255,.35);
+}
+
+.journey-image{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+}
+
+.journey-content{
+    padding:23px;
+}
+
+.journey-date{
+    color:var(--blue);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.journey-content h3{
+    margin:8px 0 12px;
+    font-size:22px;
+}
+
+.journey-content p{
+    color:#b5c3d0;
+    line-height:1.7;
+    white-space:pre-line;
+}
+
+.delete-btn{
+    margin-top:18px;
+    padding:9px 14px;
+    border-radius:10px;
+    border:1px solid rgba(255,100,100,.25);
+    background:rgba(255,70,70,.08);
+    color:#ff9c9c;
+    cursor:pointer;
+}
+
+/* SEARCH */
+
+.search-box{
+    margin-bottom:20px;
+}
+
+.search-box input{
+    margin:0;
+}
+
+/* EMPTY */
+
+.empty{
+    text-align:center;
+    padding:50px 20px;
+    border:1px dashed var(--border);
+    border-radius:20px;
+    color:var(--muted);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    color:#617487;
+    padding:55px 15px 30px;
+    line-height:1.8;
+}
+
+footer strong{
+    color:#9db2c3;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    .hero{
+        padding:45px 25px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    #journeyList{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        width:90%;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero{
+        min-height:480px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .editor{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        ✦ ADARSH<span>.JOURNEY</span>
+    </div>
+
+    <div class="nav-btn">
+        My Memories
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <small>MY JOURNEY • MY MEMORIES • MY STORY</small>
+
+    <h1>
+        EVERY JOURNEY<br>
+        <span>HAS A STORY.</span>
+    </h1>
+
+    <p>
+        Welcome to my personal journey journal.
+        Here I can save my school trips, educational visits,
+        achievements, memorable moments and experiences.
+    </p>
+
+    <button class="hero-button"
+            onclick="document.getElementById('add').scrollIntoView({behavior:'smooth'})">
+        + Add My Journey
+    </button>
+
+</section>
+
+
+<!-- ADD JOURNEY -->
+
+<section class="section" id="add">
+
+    <div class="section-title">
+
+        <h2>✍️ Write Your Journey</h2>
+
+        <p>
+            Write about something memorable that happened in your life.
+        </p>
+
+    </div>
+
+
+    <div class="editor">
+
+        <label>Journey / Experience Title</label>
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Example: Engineering College Visit"
+        >
+
+
+        <label>Date</label>
+
+        <input
+            type="date"
+            id="date"
+        >
+
+
+        <label>Your Experience</label>
+
+        <textarea
+            id="description"
+            placeholder="Write your complete experience here..."
+        ></textarea>
+
+
+        <label>Add a Picture</label>
+
+        <div class="image-upload">
+
+            📷 Choose a picture from your phone
+
+            <input
+                type="file"
+                id="image"
+                accept="image/*"
+            >
+
+        </div>
+
+
+        <button
+            class="add-btn"
+            onclick="addJourney()">
+
+            + Save Journey
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- JOURNEYS -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>📖 My Journeys</h2>
+
+        <p>
+            My experiences, memories and important moments.
+        </p>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔎 Search your journeys..."
+            oninput="displayJourneys()"
+        >
+
+    </div>
+
+
+    <div id="journeyList"></div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <strong>© 2026 Adarsh Journey</strong>
+
+    <br>
+
+    Every experience teaches something new.
+
+    <br>
+
+    <span>Keep learning • Keep exploring • Keep growing</span>
+
+</footer>
+
+
+<script>
+
+/* STORAGE */
+
+let journeys =
+JSON.parse(localStorage.getItem("adarshJourneys")) || [];
+
+
+/* ADD JOURNEY */
+
+function addJourney(){
+
+    const title =
+    document.getElementById("title").value.trim();
+
+    const date =
+    document.getElementById("date").value;
+
+    const description =
+    document.getElementById("description").value.trim();
+
+    const imageInput =
+    document.getElementById("image");
+
+
+    if(!title || !description){
+
+        alert("Please enter a title and your experience.");
+
+        return;
+    }
+
+
+    if(imageInput.files.length > 0){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            saveJourney(
+                title,
+                date,
+                description,
+                e.target.result
+            );
+
+        };
+
+        reader.readAsDataURL(imageInput.files[0]);
+
+    }else{
+
+        saveJourney(
+            title,
+            date,
+            description,
+            ""
+        );
+
+    }
+
+}
+
+
+/* SAVE */
+
+function saveJourney(title,date,description,image){
+
+    const journey = {
+
+        id:Date.now(),
+
+        title:title,
+
+        date:date || new Date().toISOString().split("T")[0],
+
+        description:description,
+
+        image:image
+
+    };
+
+
+    journeys.unshift(journey);
+
+
+    localStorage.setItem(
+        "adarshJourneys",
+        JSON.stringify(journeys)
+    );
+
+
+    document.getElementById("title").value="";
+
+    document.getElementById("date").value="";
+
+    document.getElementById("description").value="";
+
+    document.getElementById("image").value="";
+
+
+    displayJourneys();
+
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* DISPLAY */
+
+function displayJourneys(){
+
+    const list =
+    document.getElementById("journeyList");
+
+    const search =
+    document.getElementById("search")
+    .value
+    .toLowerCase();
+
+
+    const filtered =
+    journeys.filter(journey =>
+
+        journey.title.toLowerCase().includes(search) ||
+
+        journey.description.toLowerCase().includes(search)
+
+    );
+
+
+    if(filtered.length === 0){
+
+        list.innerHTML = `
+
+        <div class="empty">
+
+            <div style="font-size:40px;">
+                📖
+            </div>
+
+            <h3 style="margin:10px 0;">
+                No journeys found
+            </h3>
+
+            <p>
+                Add your first memorable experience above.
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.innerHTML = filtered.map(journey => `
+
+        <article class="journey-card">
+
+            ${
+                journey.image
+
+                ?
+
+                `<img
+                    class="journey-image"
+                    src="${journey.image}"
+                    alt="${escapeHTML(journey.title)}"
+                >`
+
+                :
+
+                `<div
+                    class="journey-image"
+                    style="
+                    display:grid;
+                    place-items:center;
+                    background:
+                    linear-gradient(
+                    135deg,
+                    #102a43,
+                    #07111f
+                    );
+                    font-size:55px;
+                    ">
+                    ✦
+                </div>`
+            }
+
+
+            <div class="journey-content">
+
+                <div class="journey-date">
+                    ${formatDate(journey.date)}
+                </div>
+
+                <h3>
+                    ${escapeHTML(journey.title)}
+                </h3>
+
+                <p>
+                    ${escapeHTML(journey.description)}
+                </p>
+
+                <button
+                    class="delete-btn"
+                    onclick="deleteJourney(${journey.id})">
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </article>
+
+    `).join("");
+
+}
+
+
+/* DELETE */
+
+function deleteJourney(id){
+
+    if(!confirm("Delete this journey?")){
+
+        return;
+
+    }
+
+
+    journeys =
+    journeys.filter(
+        journey => journey.id !== id
+    );
+
+
+    localStorage.setItem(
+        "adarshJourneys",
+        JSON.stringify(journeys)
+    );
+
+
+    displayJourneys();
+
+}
+
+
+/* DATE */
+
+function formatDate(date){
+
+    if(!date){
+        return "DATE NOT SET";
+    }
+
+    const d = new Date(date + "T00:00:00");
+
+    return d.toLocaleDateString(
+        "en-IN",
+        {
+            day:"2-digit",
+            month:"long",
+            year:"numeric"
+        }
+    ).toUpperCase();
+
+}
+
+
+/* SECURITY */
+
+function escapeHTML(text){
+
+    return text
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* LOAD */
+
+displayJourneys();
+
+</script>
+
+</body>
+</html>
