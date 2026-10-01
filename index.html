@@ -15,12 +15,12 @@
 
 :root{
     --bg:#050914;
-    --card:rgba(255,255,255,.065);
+    --card:rgba(255,255,255,.06);
     --border:rgba(255,255,255,.12);
     --blue:#55c8ff;
-    --cyan:#8beaff;
+    --cyan:#8beeff;
     --text:#f5f9ff;
-    --muted:#9aabba;
+    --muted:#9aa8ba;
 }
 
 html{
@@ -28,10 +28,10 @@ html{
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:
-        radial-gradient(circle at 10% 10%,rgba(50,180,255,.15),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(80,100,255,.12),transparent 30%),
+        radial-gradient(circle at 10% 10%,rgba(50,180,255,.12),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(80,100,255,.10),transparent 30%),
         var(--bg);
     color:var(--text);
     min-height:100vh;
@@ -50,8 +50,9 @@ nav{
 }
 
 .logo{
-    font-size:22px;
+    font-size:23px;
     font-weight:800;
+    letter-spacing:.5px;
 }
 
 .logo span{
@@ -66,52 +67,35 @@ nav{
     font-size:13px;
 }
 
-/* MAIN */
-
-.container{
-    width:92%;
-    max-width:1150px;
-    margin:auto;
-}
-
 /* HERO */
 
 .hero{
-    min-height:480px;
+    width:92%;
+    max-width:1150px;
+    margin:25px auto 50px;
+    padding:75px 30px;
+    text-align:center;
     border:1px solid var(--border);
     border-radius:30px;
-    overflow:hidden;
-    padding:55px 45px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-
     background:
         linear-gradient(
-            90deg,
-            rgba(3,9,20,.94),
-            rgba(3,9,20,.55)
-        ),
-        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85");
-
-    background-size:cover;
-    background-position:center;
-
-    box-shadow:0 30px 80px rgba(0,0,0,.4);
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
 }
 
 .hero small{
-    color:var(--cyan);
-    letter-spacing:3px;
+    color:var(--blue);
     font-weight:bold;
-    margin-bottom:18px;
+    letter-spacing:3px;
 }
 
 .hero h1{
-    font-size:clamp(45px,7vw,80px);
+    margin:15px 0;
+    font-size:clamp(42px,8vw,82px);
     line-height:1;
-    letter-spacing:-3px;
 }
 
 .hero h1 span{
@@ -120,171 +104,211 @@ nav{
 
 .hero p{
     max-width:650px;
-    color:#c0cfdb;
-    line-height:1.8;
-    margin-top:22px;
-}
-
-.hero-button{
-    width:max-content;
-    margin-top:28px;
-    padding:14px 22px;
-    border-radius:14px;
-    background:var(--blue);
-    color:#06111c;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* SECTION */
-
-.section{
-    margin-top:60px;
-}
-
-.section-title{
-    margin-bottom:25px;
-}
-
-.section-title h2{
-    font-size:32px;
-}
-
-.section-title p{
+    margin:auto;
     color:var(--muted);
-    margin-top:8px;
+    font-size:17px;
+    line-height:1.7;
+}
+
+/* MAIN */
+
+.container{
+    width:92%;
+    max-width:950px;
+    margin:auto;
 }
 
 /* JOURNEY CARD */
 
-.journey-card{
-    background:var(--card);
+.journey{
+    background:rgba(255,255,255,.045);
     border:1px solid var(--border);
-    border-radius:25px;
+    border-radius:28px;
     overflow:hidden;
-    margin-bottom:30px;
-
-    box-shadow:0 15px 45px rgba(0,0,0,.25);
-
-    transition:.3s;
+    box-shadow:0 25px 70px rgba(0,0,0,.35);
+    backdrop-filter:blur(10px);
 }
 
-.journey-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(85,200,255,.35);
-}
+/* YOUR NEW IMAGE */
 
 .journey-image{
     width:100%;
-    max-height:500px;
+    height:auto;
+    max-height:550px;
     object-fit:cover;
     display:block;
+    background:#111827;
 }
 
-.journey-content{
-    padding:30px;
+/* CONTENT */
+
+.content{
+    padding:35px;
 }
 
 .date{
     color:var(--blue);
     font-size:13px;
     font-weight:bold;
-    letter-spacing:1px;
+    letter-spacing:2px;
 }
 
-.journey-content h3{
-    font-size:28px;
-    margin:10px 0 18px;
+.content h2{
+    font-size:34px;
+    margin:10px 0 22px;
+    line-height:1.25;
 }
 
 .story{
-    color:#c3d0dc;
-    line-height:1.9;
+    color:#cbd5e1;
     font-size:16px;
-    white-space:pre-line;
+    line-height:1.85;
+}
+
+.story p{
+    margin-bottom:18px;
 }
 
 /* QUOTE */
 
 .quote{
-    margin-top:20px;
-    padding:25px;
-    border-left:3px solid var(--blue);
-    background:rgba(85,200,255,.05);
-    border-radius:10px;
-    color:#a9eaff;
-    font-weight:bold;
+    margin-top:30px;
+    padding:20px;
+    border-left:4px solid var(--blue);
+    border-radius:12px;
+    background:rgba(85,200,255,.07);
+    color:#e6f7ff;
     line-height:1.7;
 }
 
-/* TIMELINE */
+/* INFO BOXES */
 
-.timeline{
-    margin-top:50px;
+.info-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    gap:15px;
+    margin-top:25px;
 }
 
-.timeline-card{
-    background:var(--card);
+.info-box{
+    padding:22px;
+    text-align:center;
+    background:rgba(255,255,255,.04);
     border:1px solid var(--border);
-    border-radius:20px;
-    padding:25px;
+    border-radius:18px;
+    transition:.3s;
 }
 
-.timeline-card h3{
-    color:var(--blue);
+.info-box:hover{
+    transform:translateY(-5px);
+    border-color:rgba(85,200,255,.4);
+}
+
+.info-box .icon{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.info-box h3{
+    font-size:14px;
+    color:#fff;
+}
+
+.info-box p{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* FUTURE */
+
+.future{
+    margin:35px 0;
+    padding:30px;
+    border:1px dashed rgba(255,255,255,.2);
+    border-radius:22px;
+    text-align:center;
+}
+
+.future h2{
     margin-bottom:10px;
 }
 
-.timeline-card p{
+.future p{
     color:var(--muted);
-    line-height:1.6;
+    line-height:1.7;
 }
 
 /* FOOTER */
 
 footer{
+    width:92%;
+    max-width:950px;
+    margin:60px auto 0;
+    padding:30px 0 45px;
     text-align:center;
-    padding:70px 15px 30px;
-    color:#647789;
-    line-height:1.8;
+    border-top:1px solid var(--border);
+    color:#718096;
+    font-size:13px;
 }
 
 footer strong{
-    color:#a9bdcb;
+    color:#b8dfff;
 }
 
 /* MOBILE */
 
-@media(max-width:750px){
+@media(max-width:700px){
+
+    nav{
+        padding:17px 0;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .view-only{
+        font-size:11px;
+        padding:7px 10px;
+    }
 
     .hero{
-        padding:45px 25px;
-        min-height:500px;
+        margin-top:15px;
+        padding:55px 20px;
+        border-radius:22px;
     }
 
     .hero h1{
-        font-size:45px;
+        font-size:48px;
     }
 
-    .journey-content{
-        padding:22px;
+    .hero p{
+        font-size:15px;
     }
 
-    .journey-content h3{
-        font-size:23px;
+    .journey-image{
+        max-height:none;
     }
 
-    .timeline{
+    .content{
+        padding:24px;
+    }
+
+    .content h2{
+        font-size:27px;
+    }
+
+    .story{
+        font-size:15px;
+    }
+
+    .info-grid{
         grid-template-columns:1fr;
     }
 }
-
 </style>
 </head>
-
 
 <body>
 
@@ -293,130 +317,176 @@ footer strong{
 <nav>
 
     <div class="logo">
-        ✦ ADARSH<span>.JOURNEY</span>
+        ADARSH<span>.JOURNEY</span>
     </div>
 
     <div class="view-only">
-        👁 VIEW ONLY
+        VIEW ONLY
     </div>
 
 </nav>
-
-
-<main class="container">
 
 
 <!-- HERO -->
 
 <section class="hero">
 
-    <small>
-        MY JOURNEY • MY MEMORIES • MY EXPERIENCES
-    </small>
+    <small>MY PERSONAL JOURNEY</small>
 
     <h1>
-        EVERY JOURNEY<br>
-        <span>HAS A STORY.</span>
+        My <span>Journey</span>
     </h1>
 
     <p>
-        Welcome to my personal journey journal.
-        Here I share my educational trips, memorable
-        experiences, achievements and important moments
-        of my life.
+        Memories, experiences, learning and dreams —
+        every journey becomes a part of my story.
     </p>
-
-    <a href="#journeys" class="hero-button">
-        Explore My Journeys ↓
-    </a>
 
 </section>
 
 
-<!-- JOURNEYS -->
+<!-- MAIN -->
 
-<section class="section" id="journeys">
+<main class="container">
 
-    <div class="section-title">
-
-        <h2>📖 My Journey</h2>
-
-        <p>
-            Some moments become memories that stay with us forever.
-        </p>
-
-    </div>
-
-
-    <!-- JOURNEY 1 -->
-
-    <article class="journey-card">
+    <article class="journey">
 
         <!--
-        PHOTO CHANGE KARNA HO TO
-        src="your-photo.jpg"
-        KAR DO
+        IMPORTANT:
+        GitHub me photo ka naam EXACTLY:
+        journey.jpg
+        hona chahiye.
         -->
 
         <img
             class="journey-image"
-            src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=85"
-            alt="Engineering College"
-        >
+            src="journey.jpg"
+            alt="Engineering College Shahdol">
 
-
-        <div class="journey-content">
+        <div class="content">
 
             <div class="date">
                 29 SEPTEMBER 2026
             </div>
 
-            <h3>
-                Engineering College Shahdol Visit
-            </h3>
-
+            <h2>
+                Engineering College, Shahdol
+                — Educational Visit
+            </h2>
 
             <div class="story">
 
-29 September 2026 ka din mere liye bahut khaas aur yaadgaar raha. Us din hamare vidyalay dwara humein Engineering College, Shahdol ke shaikshanik bhraman par le jaya gaya.
+                <p>
+                    29 September 2026 ka din mere liye bahut
+                    khaas aur yaadgaar raha. Us din hamare
+                    vidyalay dwara hame Engineering College,
+                    Shahdol ke shaikshanik bhraman par le jaya gaya.
+                </p>
 
-Is bhraman ka uddeshya humein Engineering College ke vatavaran, prayogshalon, pustakalay tatha wahan hone wali vibhinn gatividhiyon ke baare mein jaankari dena tha.
+                <p>
+                    Is bhraman ka uddeshya hame engineering
+                    college ke vatavaran, laboratories, library
+                    aur practical activities ke baare mein
+                    jaankari dena tha.
+                </p>
 
-Subah hum sabhi vidyarthi apne vidyalay pahunche aur wahan se bus dwara Engineering College ke liye rawana hue. Bus mein doston ke saath yatra karne mein bahut maza aaya. Raaste mein hum sabhi aapas mein baatein karte hue aur hansi-mazaak karte hue college pahunche.
+                <p>
+                    Hum sabhi vidyarthi bus se college pahunche.
+                    College pahunchkar humne wahan ki alag-alag
+                    laboratories aur library ko dekha.
+                </p>
 
-College pahunchne ke baad hum sabhi bahut utsahit the, kyunki humein pehli baar itne bade takneeki sansthan ko kareeb se dekhne ka avsar mil raha tha.
+                <p>
+                    College ke campus aur academic block ko
+                    dekhkar mujhe higher education ke environment
+                    ko samajhne ka achha avsar mila.
+                </p>
 
-College ke mukhya dwar se andar pravesh karne ke baad humne wahan ki kuch tasveerein bhi leen. Iske baad hamare shikshakon aur college ke margdarshakon ne humein college ke baare mein mahatvapurn jaankari di.
+                <p>
+                    Chemistry, Physics aur Computer labs ko
+                    dekhkar mujhe practical education ke
+                    mahatva ko samajhne ka avsar mila.
+                </p>
 
-Sabse pehle humein pustakalay le jaya gaya. Wahan bahut saari kitaabein dekhkar humein padhai aur gyaan ke mahatva ka ehsaas hua.
+                <p>
+                    Workshop aur practical activities ke baare
+                    mein bhi hame useful information di gayi.
+                    Isse mujhe engineering education ko aur
+                    kareeb se samajhne ka mauka mila.
+                </p>
 
-Iske baad humein Chemistry Lab, Physics Lab aur Computer Lab dikhaye gaye. Prayogshalon mein rakhe upkaranon aur wahan hone wale prayogon ke baare mein humein jaankari di gayi.
+                <p>
+                    Is poore bhraman ke dauran maine bahut kuch
+                    naya seekha. Is anubhav ne mere andar
+                    engineering aur technical education ke
+                    prati aur adhik ruchi paida ki.
+                </p>
 
-Computer Lab mein aadhunik takneek aur computer se sambandhit kai cheezein dekhne ko mili. Yah anubhav hamare liye bahut gyaanvardhak raha.
+                <p>
+                    Teachers ne hame college ke environment,
+                    education aur future opportunities ke baare
+                    mein bahut si useful information di.
+                </p>
 
-Iske baad humein college ki Workshop bhi dikhai gayi. Wahan machineon aur takneeki upkaranon ke baare mein bataya gaya.
-
-Humein yah samajhne ka avsar mila ki Engineering ki padhai keval kitaabon tak seemit nahi hoti, balki usmein vyavaharik gyaan ka bhi bahut mahatva hota hai.
-
-Bhraman ke dauran college ki or se humein naashta bhi diya gaya. Doston ke saath baithkar naashta karna aur poore din ki gatividhiyon ko yaad karna bahut achha laga.
-
-Is poore bhraman ke dauran humne bahut kuch naya seekha. Humein Engineering College ka vatavaran dekhne, prayogshalon ko samajhne aur wahan ki padhai ke baare mein jaanne ka avsar mila.
-
-Is yatra ne mere man mein Engineering aur takneeki shiksha ke prati ruchi aur bhi badha di.
-
-Ant mein main apne vidyalay ke sabhi shikshakon ka dhanyavaad karna chahta hoon, jinhone humein is shaikshanik bhraman ka avsar diya.
-
-Yah yatra mere liye keval manoranjan ka saadhan nahi thi, balki seekhne, dekhne aur apne bhavishya ke baare mein sochne ka ek mahatvapurn anubhav thi.
+                <p>
+                    Yah yatra mere liye sirf ek educational tour
+                    nahi thi, balki mere future dreams ki taraf
+                    ek chhota sa kadam bhi thi.
+                </p>
 
             </div>
 
+
+            <!-- QUOTE -->
 
             <div class="quote">
+                “Har journey hame kuch naya sikhati hai,
+                aur har experience hamare future ko behtar
+                banata hai.”
+            </div>
 
-                ✨ "Yah bhraman mere liye ek aisi yaadgaar yatra rahi,
-                jisne mujhe nai cheezein seekhne ke saath-saath
-                apne bhavishya ke sapnon ko aur spasht roop se
-                dekhne ki prerna di."
+
+            <!-- DETAILS -->
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <div class="icon">📅</div>
+
+                    <h3>Date</h3>
+
+                    <p>
+                        29 September 2026
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <div class="icon">📍</div>
+
+                    <h3>Place</h3>
+
+                    <p>
+                        Shahdol, Madhya Pradesh
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <div class="icon">🎓</div>
+
+                    <h3>Purpose</h3>
+
+                    <p>
+                        Educational Visit
+                    </p>
+
+                </div>
 
             </div>
 
@@ -425,100 +495,21 @@ Yah yatra mere liye keval manoranjan ka saadhan nahi thi, balki seekhne, dekhne 
     </article>
 
 
-    <!--
-    ==========================================
-    FUTURE JOURNEY ADD KARNE KA TEMPLATE
-    ==========================================
+    <!-- FUTURE JOURNEYS -->
 
-    Is poore article ko copy karke
-    Engineering wali journey ke neeche paste karo.
+    <section class="future">
 
-    Phir date, title, photo aur story change karo.
-
-    ==========================================
-    -->
-
-
-    <article class="journey-card">
-
-        <div class="journey-content">
-
-            <div class="date">
-                COMING SOON
-            </div>
-
-            <h3>
-                More Journeys Coming Soon...
-            </h3>
-
-            <div class="story">
-                Meri agli yaadgaar journey yahan add ki jayegi.
-            </div>
-
-        </div>
-
-    </article>
-
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="section">
-
-    <div class="section-title">
-
-        <h2>🌟 My Journey Philosophy</h2>
+        <h2>
+            More Journeys Coming Soon...
+        </h2>
 
         <p>
-            Har experience humein kuch naya sikhata hai.
+            Yeh website meri life ki important journeys,
+            experiences aur memories ko ek jagah save karne
+            ke liye hai.
         </p>
 
-    </div>
-
-
-    <div class="timeline">
-
-        <div class="timeline-card">
-
-            <h3>📚 Learn</h3>
-
-            <p>
-                Har journey se kuch naya seekhna
-                aur apne knowledge ko badhana.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-card">
-
-            <h3>🌍 Explore</h3>
-
-            <p>
-                Nayi jagahon ko dekhna, naye logon se
-                milna aur naye experiences lena.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-card">
-
-            <h3>🚀 Grow</h3>
-
-            <p>
-                Apne experiences se seekhkar
-                future ke goals ki taraf badhna.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
+    </section>
 
 </main>
 
@@ -527,15 +518,8 @@ Yah yatra mere liye keval manoranjan ka saadhan nahi thi, balki seekhne, dekhne 
 
 <footer>
 
-    <strong>✦ ADARSH JOURNEY</strong>
-
-    <br>
-
-    My experiences • My memories • My story
-
-    <br><br>
-
-    © 2026 Adarsh. All rights reserved.
+    © 2026 <strong>Adarsh</strong> •
+    My Personal Journey
 
 </footer>
 
