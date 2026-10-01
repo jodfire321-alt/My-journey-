@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Adarsh Journey | My Life & Memories</title>
+<title>Adarsh Journey | My Stories & Memories</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 *{
     margin:0;
     padding:0;
@@ -18,18 +16,22 @@
 :root{
     --bg:#050914;
     --card:rgba(255,255,255,.065);
-    --border:rgba(255,255,255,.11);
+    --border:rgba(255,255,255,.12);
     --blue:#55c8ff;
-    --cyan:#83e7ff;
+    --cyan:#8beaff;
     --text:#f5f9ff;
-    --muted:#91a4b8;
+    --muted:#9aabba;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Inter,Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:
-        radial-gradient(circle at 15% 10%,rgba(52,170,255,.16),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(91,112,255,.12),transparent 30%),
+        radial-gradient(circle at 10% 10%,rgba(50,180,255,.15),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(80,100,255,.12),transparent 30%),
         var(--bg);
     color:var(--text);
     min-height:100vh;
@@ -48,24 +50,23 @@ nav{
 }
 
 .logo{
-    font-size:21px;
+    font-size:22px;
     font-weight:800;
-    letter-spacing:.5px;
 }
 
 .logo span{
     color:var(--blue);
 }
 
-.nav-btn{
+.view-only{
     border:1px solid var(--border);
-    background:rgba(255,255,255,.06);
-    color:white;
     padding:9px 15px;
     border-radius:30px;
+    color:#b9d8e8;
+    font-size:13px;
 }
 
-/* HERO */
+/* MAIN */
 
 .container{
     width:92%;
@@ -73,39 +74,44 @@ nav{
     margin:auto;
 }
 
+/* HERO */
+
 .hero{
-    min-height:430px;
+    min-height:480px;
     border:1px solid var(--border);
     border-radius:30px;
-    padding:60px 45px;
+    overflow:hidden;
+    padding:55px 45px;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
-    position:relative;
-    overflow:hidden;
 
     background:
-        linear-gradient(90deg,rgba(3,9,20,.94),rgba(3,9,20,.58)),
+        linear-gradient(
+            90deg,
+            rgba(3,9,20,.94),
+            rgba(3,9,20,.55)
+        ),
         url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85");
 
     background-size:cover;
     background-position:center;
 
-    box-shadow:0 30px 80px rgba(0,0,0,.35);
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
 }
 
 .hero small{
     color:var(--cyan);
     letter-spacing:3px;
-    font-weight:700;
+    font-weight:bold;
     margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:clamp(42px,7vw,78px);
+    font-size:clamp(45px,7vw,80px);
     line-height:1;
     letter-spacing:-3px;
-    max-width:800px;
 }
 
 .hero h1 span{
@@ -113,122 +119,53 @@ nav{
 }
 
 .hero p{
-    max-width:620px;
-    color:#bdcad7;
-    line-height:1.7;
-    margin-top:20px;
-    font-size:16px;
+    max-width:650px;
+    color:#c0cfdb;
+    line-height:1.8;
+    margin-top:22px;
 }
 
 .hero-button{
     width:max-content;
     margin-top:28px;
-    padding:14px 21px;
+    padding:14px 22px;
     border-radius:14px;
     background:var(--blue);
     color:#06111c;
-    font-weight:700;
-    border:none;
-    cursor:pointer;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 /* SECTION */
 
 .section{
-    margin-top:55px;
+    margin-top:60px;
 }
 
 .section-title{
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .section-title h2{
-    font-size:30px;
+    font-size:32px;
 }
 
 .section-title p{
     color:var(--muted);
-    margin-top:6px;
+    margin-top:8px;
 }
 
-/* JOURNEY FORM */
-
-.editor{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:24px;
-    padding:28px;
-    backdrop-filter:blur(15px);
-}
-
-input,
-textarea{
-    width:100%;
-    background:rgba(0,0,0,.22);
-    color:white;
-    border:1px solid var(--border);
-    border-radius:13px;
-    padding:14px;
-    outline:none;
-    margin-bottom:15px;
-    font-family:inherit;
-}
-
-input:focus,
-textarea:focus{
-    border-color:var(--blue);
-}
-
-textarea{
-    min-height:170px;
-    resize:vertical;
-}
-
-label{
-    display:block;
-    color:#b7c7d5;
-    font-size:13px;
-    margin-bottom:7px;
-}
-
-.add-btn{
-    background:linear-gradient(135deg,#55c8ff,#7ce6ff);
-    border:none;
-    padding:13px 22px;
-    border-radius:13px;
-    font-weight:800;
-    cursor:pointer;
-}
-
-/* IMAGE UPLOAD */
-
-.image-upload{
-    border:1px dashed #45677e;
-    border-radius:14px;
-    padding:18px;
-    margin-bottom:15px;
-    text-align:center;
-    color:var(--muted);
-}
-
-.image-upload input{
-    border:none;
-    margin:10px 0 0;
-}
-
-/* JOURNEY CARDS */
-
-#journeyList{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
+/* JOURNEY CARD */
 
 .journey-card{
     background:var(--card);
     border:1px solid var(--border);
-    border-radius:22px;
+    border-radius:25px;
     overflow:hidden;
+    margin-bottom:30px;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.25);
+
     transition:.3s;
 }
 
@@ -239,74 +176,84 @@ label{
 
 .journey-image{
     width:100%;
-    height:230px;
+    max-height:500px;
     object-fit:cover;
     display:block;
 }
 
 .journey-content{
-    padding:23px;
+    padding:30px;
 }
 
-.journey-date{
+.date{
     color:var(--blue);
-    font-size:12px;
-    font-weight:700;
+    font-size:13px;
+    font-weight:bold;
     letter-spacing:1px;
 }
 
 .journey-content h3{
-    margin:8px 0 12px;
-    font-size:22px;
+    font-size:28px;
+    margin:10px 0 18px;
 }
 
-.journey-content p{
-    color:#b5c3d0;
-    line-height:1.7;
+.story{
+    color:#c3d0dc;
+    line-height:1.9;
+    font-size:16px;
     white-space:pre-line;
 }
 
-.delete-btn{
-    margin-top:18px;
-    padding:9px 14px;
+/* QUOTE */
+
+.quote{
+    margin-top:20px;
+    padding:25px;
+    border-left:3px solid var(--blue);
+    background:rgba(85,200,255,.05);
     border-radius:10px;
-    border:1px solid rgba(255,100,100,.25);
-    background:rgba(255,70,70,.08);
-    color:#ff9c9c;
-    cursor:pointer;
+    color:#a9eaff;
+    font-weight:bold;
+    line-height:1.7;
 }
 
-/* SEARCH */
+/* TIMELINE */
 
-.search-box{
-    margin-bottom:20px;
+.timeline{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.search-box input{
-    margin:0;
-}
-
-/* EMPTY */
-
-.empty{
-    text-align:center;
-    padding:50px 20px;
-    border:1px dashed var(--border);
+.timeline-card{
+    background:var(--card);
+    border:1px solid var(--border);
     border-radius:20px;
+    padding:25px;
+}
+
+.timeline-card h3{
+    color:var(--blue);
+    margin-bottom:10px;
+}
+
+.timeline-card p{
     color:var(--muted);
+    line-height:1.6;
 }
 
 /* FOOTER */
 
 footer{
     text-align:center;
-    color:#617487;
-    padding:55px 15px 30px;
+    padding:70px 15px 30px;
+    color:#647789;
     line-height:1.8;
 }
 
 footer strong{
-    color:#9db2c3;
+    color:#a9bdcb;
 }
 
 /* MOBILE */
@@ -315,37 +262,29 @@ footer strong{
 
     .hero{
         padding:45px 25px;
+        min-height:500px;
     }
 
     .hero h1{
-        letter-spacing:-2px;
+        font-size:45px;
     }
 
-    #journeyList{
+    .journey-content{
+        padding:22px;
+    }
+
+    .journey-content h3{
+        font-size:23px;
+    }
+
+    .timeline{
         grid-template-columns:1fr;
     }
-
-    nav{
-        width:90%;
-    }
 }
 
-@media(max-width:500px){
-
-    .hero{
-        min-height:480px;
-    }
-
-    .hero h1{
-        font-size:43px;
-    }
-
-    .editor{
-        padding:20px;
-    }
-}
 </style>
 </head>
+
 
 <body>
 
@@ -357,8 +296,8 @@ footer strong{
         ✦ ADARSH<span>.JOURNEY</span>
     </div>
 
-    <div class="nav-btn">
-        My Memories
+    <div class="view-only">
+        👁 VIEW ONLY
     </div>
 
 </nav>
@@ -366,11 +305,14 @@ footer strong{
 
 <main class="container">
 
+
 <!-- HERO -->
 
 <section class="hero">
 
-    <small>MY JOURNEY • MY MEMORIES • MY STORY</small>
+    <small>
+        MY JOURNEY • MY MEMORIES • MY EXPERIENCES
+    </small>
 
     <h1>
         EVERY JOURNEY<br>
@@ -379,434 +321,224 @@ footer strong{
 
     <p>
         Welcome to my personal journey journal.
-        Here I can save my school trips, educational visits,
-        achievements, memorable moments and experiences.
+        Here I share my educational trips, memorable
+        experiences, achievements and important moments
+        of my life.
     </p>
 
-    <button class="hero-button"
-            onclick="document.getElementById('add').scrollIntoView({behavior:'smooth'})">
-        + Add My Journey
-    </button>
-
-</section>
-
-
-<!-- ADD JOURNEY -->
-
-<section class="section" id="add">
-
-    <div class="section-title">
-
-        <h2>✍️ Write Your Journey</h2>
-
-        <p>
-            Write about something memorable that happened in your life.
-        </p>
-
-    </div>
-
-
-    <div class="editor">
-
-        <label>Journey / Experience Title</label>
-
-        <input
-            type="text"
-            id="title"
-            placeholder="Example: Engineering College Visit"
-        >
-
-
-        <label>Date</label>
-
-        <input
-            type="date"
-            id="date"
-        >
-
-
-        <label>Your Experience</label>
-
-        <textarea
-            id="description"
-            placeholder="Write your complete experience here..."
-        ></textarea>
-
-
-        <label>Add a Picture</label>
-
-        <div class="image-upload">
-
-            📷 Choose a picture from your phone
-
-            <input
-                type="file"
-                id="image"
-                accept="image/*"
-            >
-
-        </div>
-
-
-        <button
-            class="add-btn"
-            onclick="addJourney()">
-
-            + Save Journey
-
-        </button>
-
-    </div>
+    <a href="#journeys" class="hero-button">
+        Explore My Journeys ↓
+    </a>
 
 </section>
 
 
 <!-- JOURNEYS -->
 
-<section class="section">
+<section class="section" id="journeys">
 
     <div class="section-title">
 
-        <h2>📖 My Journeys</h2>
+        <h2>📖 My Journey</h2>
 
         <p>
-            My experiences, memories and important moments.
+            Some moments become memories that stay with us forever.
         </p>
 
     </div>
 
 
-    <div class="search-box">
+    <!-- JOURNEY 1 -->
 
-        <input
-            type="text"
-            id="search"
-            placeholder="🔎 Search your journeys..."
-            oninput="displayJourneys()"
+    <article class="journey-card">
+
+        <!--
+        PHOTO CHANGE KARNA HO TO
+        src="your-photo.jpg"
+        KAR DO
+        -->
+
+        <img
+            class="journey-image"
+            src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=85"
+            alt="Engineering College"
         >
+
+
+        <div class="journey-content">
+
+            <div class="date">
+                29 SEPTEMBER 2026
+            </div>
+
+            <h3>
+                Engineering College Shahdol Visit
+            </h3>
+
+
+            <div class="story">
+
+29 September 2026 ka din mere liye bahut khaas aur yaadgaar raha. Us din hamare vidyalay dwara humein Engineering College, Shahdol ke shaikshanik bhraman par le jaya gaya.
+
+Is bhraman ka uddeshya humein Engineering College ke vatavaran, prayogshalon, pustakalay tatha wahan hone wali vibhinn gatividhiyon ke baare mein jaankari dena tha.
+
+Subah hum sabhi vidyarthi apne vidyalay pahunche aur wahan se bus dwara Engineering College ke liye rawana hue. Bus mein doston ke saath yatra karne mein bahut maza aaya. Raaste mein hum sabhi aapas mein baatein karte hue aur hansi-mazaak karte hue college pahunche.
+
+College pahunchne ke baad hum sabhi bahut utsahit the, kyunki humein pehli baar itne bade takneeki sansthan ko kareeb se dekhne ka avsar mil raha tha.
+
+College ke mukhya dwar se andar pravesh karne ke baad humne wahan ki kuch tasveerein bhi leen. Iske baad hamare shikshakon aur college ke margdarshakon ne humein college ke baare mein mahatvapurn jaankari di.
+
+Sabse pehle humein pustakalay le jaya gaya. Wahan bahut saari kitaabein dekhkar humein padhai aur gyaan ke mahatva ka ehsaas hua.
+
+Iske baad humein Chemistry Lab, Physics Lab aur Computer Lab dikhaye gaye. Prayogshalon mein rakhe upkaranon aur wahan hone wale prayogon ke baare mein humein jaankari di gayi.
+
+Computer Lab mein aadhunik takneek aur computer se sambandhit kai cheezein dekhne ko mili. Yah anubhav hamare liye bahut gyaanvardhak raha.
+
+Iske baad humein college ki Workshop bhi dikhai gayi. Wahan machineon aur takneeki upkaranon ke baare mein bataya gaya.
+
+Humein yah samajhne ka avsar mila ki Engineering ki padhai keval kitaabon tak seemit nahi hoti, balki usmein vyavaharik gyaan ka bhi bahut mahatva hota hai.
+
+Bhraman ke dauran college ki or se humein naashta bhi diya gaya. Doston ke saath baithkar naashta karna aur poore din ki gatividhiyon ko yaad karna bahut achha laga.
+
+Is poore bhraman ke dauran humne bahut kuch naya seekha. Humein Engineering College ka vatavaran dekhne, prayogshalon ko samajhne aur wahan ki padhai ke baare mein jaanne ka avsar mila.
+
+Is yatra ne mere man mein Engineering aur takneeki shiksha ke prati ruchi aur bhi badha di.
+
+Ant mein main apne vidyalay ke sabhi shikshakon ka dhanyavaad karna chahta hoon, jinhone humein is shaikshanik bhraman ka avsar diya.
+
+Yah yatra mere liye keval manoranjan ka saadhan nahi thi, balki seekhne, dekhne aur apne bhavishya ke baare mein sochne ka ek mahatvapurn anubhav thi.
+
+            </div>
+
+
+            <div class="quote">
+
+                ✨ "Yah bhraman mere liye ek aisi yaadgaar yatra rahi,
+                jisne mujhe nai cheezein seekhne ke saath-saath
+                apne bhavishya ke sapnon ko aur spasht roop se
+                dekhne ki prerna di."
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <!--
+    ==========================================
+    FUTURE JOURNEY ADD KARNE KA TEMPLATE
+    ==========================================
+
+    Is poore article ko copy karke
+    Engineering wali journey ke neeche paste karo.
+
+    Phir date, title, photo aur story change karo.
+
+    ==========================================
+    -->
+
+
+    <article class="journey-card">
+
+        <div class="journey-content">
+
+            <div class="date">
+                COMING SOON
+            </div>
+
+            <h3>
+                More Journeys Coming Soon...
+            </h3>
+
+            <div class="story">
+                Meri agli yaadgaar journey yahan add ki jayegi.
+            </div>
+
+        </div>
+
+    </article>
+
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>🌟 My Journey Philosophy</h2>
+
+        <p>
+            Har experience humein kuch naya sikhata hai.
+        </p>
 
     </div>
 
 
-    <div id="journeyList"></div>
+    <div class="timeline">
 
-</section>
+        <div class="timeline-card">
 
-</main>
-
-
-<footer>
-
-    <strong>© 2026 Adarsh Journey</strong>
-
-    <br>
-
-    Every experience teaches something new.
-
-    <br>
-
-    <span>Keep learning • Keep exploring • Keep growing</span>
-
-</footer>
-
-
-<script>
-
-/* STORAGE */
-
-let journeys =
-JSON.parse(localStorage.getItem("adarshJourneys")) || [];
-
-
-/* ADD JOURNEY */
-
-function addJourney(){
-
-    const title =
-    document.getElementById("title").value.trim();
-
-    const date =
-    document.getElementById("date").value;
-
-    const description =
-    document.getElementById("description").value.trim();
-
-    const imageInput =
-    document.getElementById("image");
-
-
-    if(!title || !description){
-
-        alert("Please enter a title and your experience.");
-
-        return;
-    }
-
-
-    if(imageInput.files.length > 0){
-
-        const reader = new FileReader();
-
-        reader.onload = function(e){
-
-            saveJourney(
-                title,
-                date,
-                description,
-                e.target.result
-            );
-
-        };
-
-        reader.readAsDataURL(imageInput.files[0]);
-
-    }else{
-
-        saveJourney(
-            title,
-            date,
-            description,
-            ""
-        );
-
-    }
-
-}
-
-
-/* SAVE */
-
-function saveJourney(title,date,description,image){
-
-    const journey = {
-
-        id:Date.now(),
-
-        title:title,
-
-        date:date || new Date().toISOString().split("T")[0],
-
-        description:description,
-
-        image:image
-
-    };
-
-
-    journeys.unshift(journey);
-
-
-    localStorage.setItem(
-        "adarshJourneys",
-        JSON.stringify(journeys)
-    );
-
-
-    document.getElementById("title").value="";
-
-    document.getElementById("date").value="";
-
-    document.getElementById("description").value="";
-
-    document.getElementById("image").value="";
-
-
-    displayJourneys();
-
-
-    window.scrollTo({
-        top:document.body.scrollHeight,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* DISPLAY */
-
-function displayJourneys(){
-
-    const list =
-    document.getElementById("journeyList");
-
-    const search =
-    document.getElementById("search")
-    .value
-    .toLowerCase();
-
-
-    const filtered =
-    journeys.filter(journey =>
-
-        journey.title.toLowerCase().includes(search) ||
-
-        journey.description.toLowerCase().includes(search)
-
-    );
-
-
-    if(filtered.length === 0){
-
-        list.innerHTML = `
-
-        <div class="empty">
-
-            <div style="font-size:40px;">
-                📖
-            </div>
-
-            <h3 style="margin:10px 0;">
-                No journeys found
-            </h3>
+            <h3>📚 Learn</h3>
 
             <p>
-                Add your first memorable experience above.
+                Har journey se kuch naya seekhna
+                aur apne knowledge ko badhana.
             </p>
 
         </div>
 
-        `;
 
-        return;
+        <div class="timeline-card">
 
-    }
+            <h3>🌍 Explore</h3>
 
+            <p>
+                Nayi jagahon ko dekhna, naye logon se
+                milna aur naye experiences lena.
+            </p>
 
-    list.innerHTML = filtered.map(journey => `
-
-        <article class="journey-card">
-
-            ${
-                journey.image
-
-                ?
-
-                `<img
-                    class="journey-image"
-                    src="${journey.image}"
-                    alt="${escapeHTML(journey.title)}"
-                >`
-
-                :
-
-                `<div
-                    class="journey-image"
-                    style="
-                    display:grid;
-                    place-items:center;
-                    background:
-                    linear-gradient(
-                    135deg,
-                    #102a43,
-                    #07111f
-                    );
-                    font-size:55px;
-                    ">
-                    ✦
-                </div>`
-            }
+        </div>
 
 
-            <div class="journey-content">
+        <div class="timeline-card">
 
-                <div class="journey-date">
-                    ${formatDate(journey.date)}
-                </div>
+            <h3>🚀 Grow</h3>
 
-                <h3>
-                    ${escapeHTML(journey.title)}
-                </h3>
+            <p>
+                Apne experiences se seekhkar
+                future ke goals ki taraf badhna.
+            </p>
 
-                <p>
-                    ${escapeHTML(journey.description)}
-                </p>
+        </div>
 
-                <button
-                    class="delete-btn"
-                    onclick="deleteJourney(${journey.id})">
+    </div>
 
-                    Delete
-
-                </button>
-
-            </div>
-
-        </article>
-
-    `).join("");
-
-}
+</section>
 
 
-/* DELETE */
-
-function deleteJourney(id){
-
-    if(!confirm("Delete this journey?")){
-
-        return;
-
-    }
+</main>
 
 
-    journeys =
-    journeys.filter(
-        journey => journey.id !== id
-    );
+<!-- FOOTER -->
 
+<footer>
 
-    localStorage.setItem(
-        "adarshJourneys",
-        JSON.stringify(journeys)
-    );
+    <strong>✦ ADARSH JOURNEY</strong>
 
+    <br>
 
-    displayJourneys();
+    My experiences • My memories • My story
 
-}
+    <br><br>
 
+    © 2026 Adarsh. All rights reserved.
 
-/* DATE */
+</footer>
 
-function formatDate(date){
-
-    if(!date){
-        return "DATE NOT SET";
-    }
-
-    const d = new Date(date + "T00:00:00");
-
-    return d.toLocaleDateString(
-        "en-IN",
-        {
-            day:"2-digit",
-            month:"long",
-            year:"numeric"
-        }
-    ).toUpperCase();
-
-}
-
-
-/* SECURITY */
-
-function escapeHTML(text){
-
-    return text
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* LOAD */
-
-displayJourneys();
-
-</script>
 
 </body>
 </html>
